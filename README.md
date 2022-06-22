@@ -58,9 +58,25 @@ Finally, with the for loop completed and my data collected, I was prepared to pr
 ## Results
 After running the refactored macro, the user is able to type in which year they would like to analyze. After making their selection, the program then stores and analyzes all of the data for each individual Ticker. This analysis then gets displayed in a stylized table. Additionally, the recorded time to run this macro is displayed in a message box. While this is not particularly important to a typical use, a developer is able to use this information to see how thier changes have improved their program's overall efficiency. Below, I have displayed the resulting charts and runtimes of my new macro for both the 2017 and the 2018 spreadsheets.
 
-![2017 Stocks Analysis](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2017%20Stock%20Analysis.png?raw=true)
+2017 Stocks Analysis: Original
+![2017 Stocks Analysis: Original](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2017%20Stock%20Analysis%20Original.png?raw=true)
 
-![2018 Stocks Analysis](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2018%20Stock%20Analysis.png?raw=true)
+2017 Stocks Analysis: Refactored
+![2017 Stocks: Refactored](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2017%20Stock%20Analysis%20Refactored.png?raw=true)
 
-As you can see, this macro is capable of creating a visually appealing and understandable chart the same as it was before while also cutting down on the runtime.
+2018 Stocks Analysis: Original
+![2018 Stocks Analysis: Original](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2018%20Stock%20Analysis%20Original.png?raw=true)
 
+2018 Stocks Analysis: Refactored
+![2018 Stocks: Refactored](https://github.com/waciciarelli/Stock-Analysis/blob/main/Resources/2018%20Stock%20Analysis%20Refactored.png?raw=true)
+
+As you can see, this macro is capable of creating a visually appealing and understandable chart the same as it was before while also cutting down on the runtime. In both the cases of the 2017 and 2018 spreadsheets, the runtime of the refactored macro was around 1/10th that of the original.
+
+This code does, however, have some notable drawbacks to the original. While the code may be a bit shorter, it is not quite as simple to understand visually how this new code processes. This would only be further compounded if it was being looked at by a second developer or somebody without an extensive knowledge of the spreadsheets it works with. Additionaly, this refactored code only works when the spreadsheet is sorted by Ticker first, and then date second. If the Tickers were not sorted, the wrong values could be attributed to the Starting and Ending Prices. Furthermore, the program would run into a runtime error if it encountered a ticker again after it had already encountered it. The Starting and Ending Prices would be recorded multiple times and with different values, the total volume would not accumulate properly, and finally, the index would go beyond what the arrays had accounted for and would give a runtime error for the program.
+
+## Summary
+What are the advantages or disadvantages of refactoring code?
+Refactoring code allows for a programmer to revisit old code and to make improvements as to its efficiency and effectiveness. Refactoring also gives developers deeper insight into how to approach different problems and also allows for them to continuously be improving both themselves and their code. However, refactoring isn't a perfect process. Refactoring is still subject to human limits and errors. Not every developer has the time to refactor their old code. Additionally, refactoring can lead to errors within programs when not all of the code is taken into consideration. It is quite easy to change one variable and have it lead to a runtime error, which would only take further time to hunt down and correct.
+
+How do these pros and cons apply to refactoring the original VBA script?
+In my case, I saw all of these pros and cons when refactoring my own VBA script. I was able to see how sorting data before running such programs can drastically cut down on necessary code and allow for much more efficient runtimes. I do feel that I have grown as a programmer from this experience. On the other hand, I was able to see how quickly changing small things from my old code can snowball into runtime errors. By forgetting to rename a variable here or there, I found myself having to hunt down exactly where the issues with my program were while sifting through all of the code.
